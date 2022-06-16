@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numbers = new Array();
+        /* 이 방법 비추! push 사용해서 순차적으로
+        console.log(numbers);
+        
+        numbers[0] = 'A';
+        numbers[1] = 'B';
+        numbers[3] = 'C';
+        numbers[6] = 'D';
+        */
+       // 순차적으로 자동으로 올라감
+        numbers.push('A');
+        numbers.push('B');
+        numbers.push('C');
+        numbers.push('D');
+        numbers.push('E');
+
+        numbers.length = 2; // 배열 길이 설정
+        
+        console.log(numbers);
+        console.log(numbers.length);
+
+        const numbers2 = [];
+        numbers2[0] = 'A';
+        console.log(numbers2);
+        console.log(numbers2.length);
+
+        const numbers3 = ['A', 'B', 'C'];
+        console.log(numbers3);
+        console.log(numbers3.length);
+    </script>
+</body>
+</html>

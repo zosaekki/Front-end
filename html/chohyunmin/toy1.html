@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>레드향 주문하기</h1>
+    <fieldset>
+        <legend>상품 선택</legend>
+    </fieldset>
+    <fieldset>
+        <legend>배송 정보</legend>
+    </fieldset>
+</body>
+</html>
+
+<hr>
+<form>
+    <fieldset>
+        <div>
+            <label>아이디<input type="text"></label>
+        </div>
+        <div>
+            <label for="password1">비밀번호</label>
+            <input type="password" id="password1">
+        </div>
+        <div>
+            <label>이메일<input type="email"></label>
+        </div>
+        <div>
+            <label for="email">이메일 확인</label>
+            <input type="email" id="email">
+        </div>
+    </fieldset>
+</form>
+
+<hr>
+
+<form>
+    <fieldset hidden>
+        <label>아이디<input type="text"></label>
+        <label>비밀번호<input type="password"></label>
+        <div>
+            <label for="password1">비밀번호 확인</label>
+            <input type="password" id="password1">
+        </div>
+    </fieldset>
+</form>
+
+<hr>
+
+<form>
+    <fieldset hidden>
+        <legend>배송 정보</legend>
+        <ul>
+            <li>
+                <label for="name">이름</label>
+                <input type="text" id="name">
+            </li>
+            <li>
+                <label for="addr">배송 주소</label>
+                <input type="text" id="addr">
+            </li>
+            <li>
+                <label for="email">이메일</label>
+                <input type="email" id="email">
+            </li>
+            <li>
+                <label for="phone">연락처</label>
+                <input type="tel" id="phone">
+            </li>
+        </ul>
+    </fieldset>
+</form>
+
+<hr>
+
+<form>
+    <fieldset>
+        <legend>상품 선택</legend>
+        <p>주문할 상품을 선택해 주세요.</p>
+        <label><input type="checkbox" value="g_3">선물용 3kg</label>
+        <label><input type="checkbox" value="g_5">선물용 5kg</label>
+        <p>포장 선택</p>
+        <label><input type="radio" name="gift" value="yes">선물 포장</label>
+        <label><input type="radio" name="gift" value="no">선물 포장 안 함</label>
+    </fieldset>
+</form>

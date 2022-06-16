@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function elt(name, attr) {
+            const node = document.createElement(name);
+            if(attr) {
+                for(const item in attr) {
+                    if(attr.hasOwnProperty(item)) {
+                        node.setAttribute(item, attr[item]);
+                    }
+                }
+            }
+            return node;
+        }
+
+        function createIconEditor(parent, nx, ny) {
+            // color input
+            const inputColor = elt('input', {type: 'color'});
+            parent.appendChild(inputColor);
+
+            // All Clear Button
+            const btnAllClear = elt('input', {type: 'button', value:'All Clear'});
+            parent.appendChild(btnAllClear);
+            btnAllClear.addEventListener('click', function() {
+                const clearTd = document.querySelectorAll('td');
+                clearTd.forEach(function(item) {
+                    item.style.backgroundColor = '';
+                })
+            })
+            
+            // table
+            const table = elt('table');
+            parent.appendChild(table);
+            table.style.borderCollapse = 'collapse';
+            table.style.marginTop = '10px';
+           
+            for(let i=0; i<ny; i++) {
+                const tr = elt('tr');
+                table.appendChild(tr);
+
+                for(let z=0; z<nx; z++) {
+                    const td = elt('td');
+                    tr.appendChild(td);
+
+                    td.style.width = td.style.height = '15px';
+                    td.style.border = '1px solid #000';
+
+                    td.addEventListener('click', function(e) {
+                        /*
+                        var hex = inputColor.value;
+                        var red = parseInt(hex[1]+hex[2],16);
+                        var green = parseInt(hex[3]+hex[4],16);
+                        var blue = parseInt(hex[5]+hex[6],16);
+                        const rgb = `rgb(${red}, ${green}, ${blue})`
+                        td.style.backgroundColor !== rgb ? td.style.backgroundColor = rgb : td.style.backgroundColor = '';
+                        */
+                        // console.log(e);
+                        
+                        // 속성으로 해결
+                        if(e.target.style.backgroundColor === '' || e.target.color16 !== inputColor.value) {
+                            e.target.style.backgroundColor = inputColor.value;
+                            e.target.color16 = inputColor.value;
+                        } else {
+                            e.target.style.backgroundColor = '';
+                        }
+                        
+                    });
+                }
+            }   
+        }
+
+        createIconEditor(document.body, 10, 5);
+    </script>
+</body>
+</html>

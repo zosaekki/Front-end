@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">자바스크립트</h1>
+    <p id="text">위 텍스트를 클릭해 보세요.</p>
+    <script>
+        var heading = document.querySelector('#heading'); // 소괄호가 나왔다? 메소드 호출, 소괄호 없으면 속성, 비보이드 (리턴값이 있다)
+        heading.onclick = function() { // 최신 event만 실행
+            heading.style.color = 'red'; // 문자열 사용할 때 '' 홑따옴표 사용
+            alert('클릭'); 
+        }
+        heading.addEventListener('click', function() { // event 계속 추가
+            alert('click');
+        });
+    </script>
+</body>
+</html>
+<!-- querySelectorAll 무조건 배열로 넘어 옴 (class에서 많이 씀) -->

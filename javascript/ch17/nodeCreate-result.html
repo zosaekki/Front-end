@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c_pointer { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Web Programming</h1>
+    <p>공부할 주제를 기록해 보세요. ver.1</p>
+    <div>
+        <input type="text" id="subject">
+        <input type="button" value="추가" onclick="newReg();">
+        <input type="button" value="삭제" onclick="delSubject();">
+    </div>
+    <div id="itemList">
+        
+    </div>
+
+    <script>
+        const inputSub = document.querySelector('#subject');
+        const itemList = document.querySelector('#itemList');
+
+        function newReg() {
+            const newDiv = itemList.insertBefore(document.createElement('div'), itemList.firstChild);
+            newDiv.classList.add('c_pointer');
+            newDiv.append(inputSub.value);
+            inputSub.value = '';
+
+            newDiv.addEventListener('click', function() {
+                this.remove();
+            });
+        }
+
+        function delSubject() {
+            itemList.firstChild.remove();
+        }
+
+        
+    </script>
+</body>
+</html>

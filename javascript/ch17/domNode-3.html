@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM을 공부합시다.</h1>
+    <button onclick="addContents();">더 보기</button>
+    <div id="info"></div>
+    <script>
+        const imgSrc = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBw-SiMOrFbXB8LO64eEMoc1V8W4REeov9ig&usqp=CAU';
+        const imgAlt = 'puppy';
+
+        const divInfo = document.querySelector('#info');
+        
+        function addContents() {
+            const newP = divInfo.appendChild(document.createElement('p'));
+            const newImg = divInfo.appendChild(document.createElement('img'));
+            newP.append('DOM은 document object model의 줄임말입니다.');
+
+            newImg.src =  imgSrc;
+            newImg.alt = imgAlt;
+        }
+
+        function addContents2() {
+            const div = document.createElement('div');
+            divInfo.innerHTML = `
+                <p>DOM은 document object model의 줄임말입니다.</p>
+                <img src="${imgSrc}" alt="${imgAlt}">
+            `;
+        }
+        divinfo.appendChild(div);
+    </script>
+</body>
+</html>

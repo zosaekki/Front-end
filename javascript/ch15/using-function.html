@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> // 값을 데리고 오지 않는 보이드 함수
+        function addNumber(n1, n2) {
+            var sum = n1 + n2;
+            document.write(`결괏값 : ${sum}<br>`);
+        }
+        addNumber(1, 2);
+        addNumber(1, 2, 10); // 2개만 받기로 했으니 10은 파라미터로 받을 수 없음. 순서가 중요!!
+    </script>
+</body>
+</html>

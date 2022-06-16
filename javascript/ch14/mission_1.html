@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n;
+        var sum = 0;
+        while(true)
+        {
+            var n = parseInt(prompt('숫자 더하기(0이면 종료)'));
+            sum += n;
+            
+            if(n == 0)
+            {
+                break;
+            }
+        }
+        document.write(`모두 더한 값 : ${sum}`);
+
+        // var sum = 0;
+        // while(true) {
+        //     var n = prompt('더할 숫자');
+        //     if(n === '0') {
+        //         break;
+        //     }
+        //     var val = number(n);
+        //     if(val) {
+        //         sum += val;
+        //     }
+        // }
+        // document.wirte(`모두 더한 값 : ${sum}`)
+    </script>
+</body>
+</html>

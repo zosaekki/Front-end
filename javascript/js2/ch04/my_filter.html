@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const myArr = {
+            '0': 10,
+            '1': 43,
+            '2': 22,
+            '3': 38,
+            '4': 19,
+            '5': 53,
+            '6': 70,
+            'length': 7,
+            'forEach' : function(cb) {
+                for(let i=0; i<this.length; i++) {
+                    cb(this[i], i);
+                }
+            },
+            'map' : function(cb) {
+                const tempArr = [];
+                for(let i=0; i<this.length; i++) {
+                    tempArr.push(cb(this[i], i));
+                }
+                return tempArr;
+            },
+            'filter' : function(cb) {
+                const tempArr2 = [];
+                for(let i=0; i<this.length; i++) {
+                    if(cb(this[i], i)) {
+                        tempArr2.push(this[i]);
+                    }
+                }
+                return tempArr2;
+            }
+        }
+
+        const arr = myArr.filter(function(item, idx) {
+            return item % 2 === 0;
+        })
+
+        console.log(arr.toString());
+    </script>
+</body>
+</html>
