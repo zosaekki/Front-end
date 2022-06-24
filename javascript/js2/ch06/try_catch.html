@@ -10,13 +10,42 @@
     <script>
         try {
             console.log('AAAA');
-            const result = new Array(-1)
+            const result = new Array(-1);
             console.log('BBBB');
         } catch(e) {
-            console.error('catch : ' + e.name);
+            console.error('catch : ' + e.name); //실행됨!!
+        }
+       
+        console.log('(1) try_catch 끝');
+
+        console.log('------------');
+
+        try {
+            console.log('AAAA');            
+            console.log('BBBB');
+            console.log('CCCC');
+        } catch(e) {
+            console.error(e.name); //실행 안 됨!!
         }
 
-        console.log('1111'); 
+        console.log('(2) try_catch 끝');
+
+        console.log('------------');
+
+        try {
+            console.log('AAAA');
+            const result = new Array(-1);
+            console.log('BBBB');
+        } catch(e) {
+            console.error('catch : ' + e.name); //실행됨!!
+        } finally {
+            console.log('무조건 실행 됨!');
+        }
+       
+        console.log('(3) try_catch 끝');
+
+        console.log('------------');
+
     </script>
 </body>
 </html>
